@@ -10,4 +10,5 @@ any difference causes vcard to be treated as non unique.
 Usage
 ---------
 Script reads STDIN and writes to STDOUT, so recommended usage is:
+
 cat file1 file2 file3 | perl vCardUniq.pl > uniq.vcf
