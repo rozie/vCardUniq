@@ -5,18 +5,19 @@ use warnings;
 
 my %vcards = ();
 my $vcard  = "";
+my $debug  = 0;
 
 while (<>) {
     if (/^BEGIN\:VCARD/) {
         $vcard = "";
-        print "Begin\n";
+        print "Begin\n" if $debug;
     }
     elsif (/^END\:VCARD/) {
-        print "End\n";
+        print "End\n" if $debug;
         $vcards{$vcard} = 1;
     }
     else {
-        print "Body\n";
+        print "Body\n" if $debug;
         $vcard .= $_;
     }
 }
